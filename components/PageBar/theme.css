@@ -1,0 +1,33 @@
+@import "../theme.css";
+
+.pageBar {
+  display: flex;
+}
+
+.pageBarTitle {
+  @apply --subheader;
+  margin-right: 24px;
+  flex: 1;
+}
+
+.light {
+  @apply --light;
+}
+
+.dark {
+  @apply --dark;
+}
+
+@media screen and (min-width: 641px) and (max-width: 1007px) {
+  .pageBar {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 1007px) {
+  .pageBar {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}

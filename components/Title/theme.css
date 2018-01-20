@@ -1,0 +1,44 @@
+@import "../theme.css";
+
+.header {
+  @apply --header;
+  margin-bottom: 1em;
+}
+
+.subheader {
+  @apply --subheader;
+  margin-bottom: 1em;
+}
+
+.title {
+  @apply --title;
+  margin-bottom: 1em;
+}
+
+.subtitle {
+  @apply --subtitle;
+  margin-bottom: 1em;
+}
+
+.subtitleAlt {
+  @apply --subtitleAlt;
+  margin-bottom: 1em;
+}
+
+.base {
+  @apply --base;
+  margin-bottom: 1em;
+}
+
+.baseAlt {
+  @apply --baseAlt;
+  margin-bottom: 1em;
+}
+
+.light {
+  background: var(--color-light-list-accent-low);
+}
+
+.dark {
+  background: var(--color-dark-list-accent-low);
+}

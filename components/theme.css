@@ -1,0 +1,133 @@
+:root {
+  --unit: 4px;
+  --preferred-font: "Segoe UI", "Calibri", "Roboto", "Helvetica", "Arial",
+    sans-serif;
+  --font-weight-light: 300;
+  --font-weight-semilight: 400;
+  --font-weight-regular: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+
+  --color-accent: #0078d7;
+
+  --color-light-base-low: color(white shade(20%));
+  --color-light-base-medium-low: color(white shade(40%));
+  --color-light-base-medium: color(white shade(60%));
+  --color-light-base-medium-high: color(white shade(80%));
+  --color-light-base-high: color(white shade(100%));
+
+  --color-dark-base-low: color(black tint(20%));
+  --color-dark-base-medium-low: color(black tint(40%));
+  --color-dark-base-medium: color(black tint(60%));
+  --color-dark-base-medium-high: color(black tint(80%));
+  --color-dark-base-high: color(black tint(100%));
+
+  --color-light-list-low: color(white shade(10%));
+  --color-light-list-medium: color(white shade(20%));
+  --color-light-list-accent-low: color(#0078d7 tint(20%));
+  --color-light-list-accent-medium: color(#0078d7 tint(60%));
+  --color-light-list-accent-high: color(#0078d7 tint(70%));
+
+  --color-dark-list-low: color(black tint(10%));
+  --color-dark-list-medium: color(black tint(20%));
+  --color-dark-list-accent-low: color(#0078d7 shade(40%));
+  --color-dark-list-accent-medium: color(#0078d7 shade(20%));
+  --color-dark-list-accent-high: color(#0078d7 shade(10%));
+
+  --dark: {
+    background-color: var(--color-dark-list-low);
+    color: white;
+  }
+
+  --light: {
+    background-color: white;
+    color: black;
+  }
+
+  --header: {
+    font-size: 46px;
+    line-height: 56px;
+    margin: 0;
+    font-weight: var(--font-weight-light);
+  }
+
+  --subheader: {
+    font-size: 34px;
+    line-height: 40px;
+    margin: 0;
+    font-weight: var(--font-weight-light);
+  }
+
+  --title: {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0;
+    font-weight: var(--font-weight-semilight);
+  }
+
+  --subtitle: {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+    font-weight: var(--font-weight-regular);
+  }
+
+  --subtitleAlt: {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0;
+    font-weight: var(--font-weight-regular);
+  }
+
+  --base: {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  --baseAlt: {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0;
+    font-weight: var(--font-weight-bold);
+  }
+
+  --caption: {
+    font-size: 13px;
+    line-height: 16px;
+    margin: 0;
+    font-weight: var(--font-weight-regular);
+  }
+
+  --captionAlt: {
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0;
+    font-weight: var(--font-weight-regular);
+  }
+
+  --body: {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: var(--font-weight-regular);
+  }
+
+  --reset: {
+    box-sizing: border-box;
+    font-family: var(--preferred-font);
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-size-adjust: 100%;
+
+    & *,
+    & *::after,
+    & *::before {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+      text-size-adjust: 100%;
+      -webkit-touch-callout: none;
+    }
+  }
+}

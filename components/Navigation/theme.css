@@ -1,0 +1,98 @@
+@import "../theme.css";
+
+.navigation {
+}
+
+.menu {
+  height: 0;
+  max-height: 0px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.menuDrawerIconHidden {
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+}
+
+.menuDrawerIconHidden:checked ~ .menu {
+  transition: max-height 1s ease-in-out;
+  height: auto;
+  max-height: 100vh;
+}
+
+.menuDrawerIcon {
+  user-select: none;
+  display: block;
+  user-select: none;
+  height: 32px;
+  width: 32px;
+  margin: 6px 12px 6px 0;
+  background: white;
+}
+
+.menuDrawerIconHidden:checked {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.menuItem {
+  padding: 12px;
+}
+
+.menuItem a {
+  text-decoration: none;
+}
+
+.light {
+  @apply --light;
+}
+
+.dark {
+  @apply --dark;
+}
+
+.light a {
+  @apply --light;
+}
+
+.dark a {
+  @apply --dark;
+}
+
+@media screen and (min-width: 641px) and (max-width: 1007px) {
+  .menu {
+    position: relative;
+    height: auto;
+    display: flex;
+    max-height: unset;
+  }
+
+  .menuDrawerIcon,
+  .menuDrawer {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1007px) {
+  .menu {
+    position: relative;
+    height: auto;
+    max-height: unset;
+    display: flex;
+  }
+
+  .menuDrawerIcon,
+  .menuDrawer {
+    display: none;
+  }
+}
