@@ -8,12 +8,12 @@ import { Panel } from "../Panel/panel";
 
 namespace FRPageBar {
   export interface OwnProps {
-    title?: React.ReactNode;
-    children?: React.ReactNode;
+    content?: JSX.Element[] | JSX.Element;
+    children?: JSX.Element[] | JSX.Element;
     theme?: TReactCSSThemrTheme;
   }
 
-  export type Props = OwnProps & React.HTMLAttributes<HTMLDivElement>;
+  export type Props = OwnProps & React.HTMLAttributes<HTMLSpanElement>;
   export type State = {};
 }
 
@@ -23,7 +23,7 @@ class FRPageBar extends React.Component<FRPageBar.Props, FRPageBar.State> {
   };
 
   render(): JSX.Element {
-    const { theme, title, className, children, ...other } = this.props;
+    const { theme, content, className, children, ...other } = this.props;
 
     return (
       <Panel
@@ -33,8 +33,14 @@ class FRPageBar extends React.Component<FRPageBar.Props, FRPageBar.State> {
         )}
         {...other}
       >
-        <span className={classnames(theme.pageBarTitle as string, className)}>
-          {title}
+        <span
+          className={classnames(
+            theme.pageBarTitle as string,
+            theme[this.context.stylus] as string,
+            className
+          )}
+        >
+          {content}
         </span>
         {children}
       </Panel>

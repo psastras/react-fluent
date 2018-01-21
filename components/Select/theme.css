@@ -1,14 +1,54 @@
 @import "../theme.css";
 
+.selectContainer {
+  width: 100%;
+  height: 28px;
+  border-bottom: 1px solid var(--color-light-base-high);
+  line-height: 28px;
+  overflow: hidden;
+  background: url("data:image/svg+xml;utf8,<svg fill='#000' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'> <path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/> <path d='M0-.75h24v24H0z' fill='none'/> </svg>")
+    no-repeat right;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+
+.selectDefault {
+  font-family: var(--preferred-font);
+  font-size: 15px;
+  font-weight: var(--font-weight-semilight);
+}
+
+.selectDefault.light,
+.selectDefault.light a {
+  text-decoration: none;
+  color: black;
+}
+
+.selectDefault.dark,
+.selectDefault.dark a {
+  text-decoration: none;
+  color: white;
+}
+
 .select {
   font-family: var(--preferred-font);
   font-size: 15px;
+  font-weight: var(--font-weight-semilight);
   cursor: pointer;
   border: none;
-  border-bottom: 1px solid black;
-  font-weight: var(--font-weight-semilight);
   width: 100%;
+  height: 100%;
   padding: var(--unit) 0;
+  margin: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .select:focus {

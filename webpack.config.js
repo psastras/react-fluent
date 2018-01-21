@@ -23,6 +23,7 @@ module.exports = {
   devServer: {
     hot: true,
     quiet: true,
+    historyApiFallback: true,
     contentBase: "./dist"
   },
   module: {
@@ -51,6 +52,10 @@ module.exports = {
             ]
           })
         )
+      },
+      {
+        test: /\.md/,
+        use: ["cache-loader", "raw-loader"]
       }
     ]
   },

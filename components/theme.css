@@ -20,6 +20,7 @@
   --unit: 4px;
   --preferred-font: "Segoe UI", "Calibri", "Roboto", "Helvetica", "Arial",
     sans-serif;
+  --preferred-monospace-font: "Consolas", "Monaco", monospace;
   --font-weight-light: 300;
   --font-weight-semilight: 400;
   --font-weight-regular: 500;
@@ -28,29 +29,67 @@
 
   --color-accent: #0078d7;
 
-  --color-light-base-low: color(white shade(20%));
-  --color-light-base-medium-low: color(white shade(40%));
-  --color-light-base-medium: color(white shade(60%));
-  --color-light-base-medium-high: color(white shade(80%));
-  --color-light-base-high: color(white shade(100%));
+  --color-light-base-low: #00000033;
+  --color-light-base-medium-low: #00000066;
+  --color-light-base-medium: #00000099;
+  --color-light-base-medium-high: #000000cc;
+  --color-light-base-high: #000000ff;
 
-  --color-dark-base-low: color(black tint(20%));
-  --color-dark-base-medium-low: color(black tint(40%));
-  --color-dark-base-medium: color(black tint(60%));
-  --color-dark-base-medium-high: color(black tint(80%));
-  --color-dark-base-high: color(black tint(100%));
+  --color-light-alt-low: #ffffff33;
+  --color-light-alt-medium-low: #ffffff66;
+  --color-light-alt-medium: #ffffff99;
+  --color-light-alt-medium-high: #ffffffcc;
+  --color-light-alt-high: #ffffffff;
 
-  --color-light-list-low: color(white shade(10%));
-  --color-light-list-medium: color(white shade(20%));
+  --color-light-list-low: #00000019;
+  --color-light-list-medium: #00000033;
   --color-light-list-accent-low: color(#0078d7 tint(20%));
   --color-light-list-accent-medium: color(#0078d7 tint(60%));
   --color-light-list-accent-high: color(#0078d7 tint(70%));
 
-  --color-dark-list-low: color(black tint(10%));
-  --color-dark-list-medium: color(black tint(20%));
+  --color-light-chrome-low: #f2f2f2ff;
+  --color-light-chrome-medium-low: #f2f2f2ff;
+  --color-light-chrome-medium: #e6e6e6ff;
+  --color-light-chrome-high: #ccccccff;
+  --color-light-chrome-alt-low: #171717ff;
+  --color-light-chrome-disabled-low: #7a7a7aff;
+  --color-light-chrome-disabled-high: #ccccccff;
+  --color-light-chrome-black-low: #00000033;
+  --color-light-chrome-black-medium-low: #00000066;
+  --color-light-chrome-black-medium: #000000cc;
+  --color-light-chrome-black-high: #000000ff;
+  --color-light-chrome-white: #ffffffff;
+
+  --color-dark-base-low: #ffffff33;
+  --color-dark-base-medium-low: #ffffff66;
+  --color-dark-base-medium: #ffffff99;
+  --color-dark-base-medium-high: #ffffffcc;
+  --color-dark-base-high: #ffffffff;
+
+  --color-dark-alt-low: #00000033;
+  --color-dark-alt-medium-low: #00000066;
+  --color-dark-alt-medium: #00000099;
+  --color-dark-alt-medium-high: #000000cc;
+  --color-dark-alt-high: #000000ff;
+
+  --color-dark-list-low: #00000019;
+  --color-dark-list-medium: #00000033;
   --color-dark-list-accent-low: color(#0078d7 shade(40%));
   --color-dark-list-accent-medium: color(#0078d7 shade(20%));
   --color-dark-list-accent-high: color(#0078d7 shade(10%));
+
+  --color-dark-chrome-low: #171717ff;
+  --color-dark-chrome-medium-low: #2b2b2bff;
+  --color-dark-chrome-medium: #1f1f1fff;
+  --color-dark-chrome-high: #767676ff;
+  --color-dark-chrome-alt-low: #f2f2f2ff;
+  --color-dark-chrome-disabled-low: #858585ff;
+  --color-dark-chrome-disabled-high: #333333ff;
+  --color-dark-chrome-black-low: #00000033;
+  --color-dark-chrome-black-medium-low: #00000066;
+  --color-dark-chrome-black-medium: #000000cc;
+  --color-dark-chrome-black-high: #000000ff;
+  --color-dark-chrome-white: #ffffffff;
 
   --header: {
     font-size: 46px;
@@ -138,4 +177,54 @@
       -webkit-touch-callout: none;
     }
   }
+}
+
+h1 {
+  @apply --header;
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  @apply --subheader;
+  margin-bottom: 1.5em;
+}
+
+h3 {
+  @apply --title;
+  margin-bottom: 1.5em;
+}
+
+h4 {
+  @apply --subtitle;
+  margin-bottom: 1.5em;
+}
+
+code {
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--preferred-monospace-font);
+}
+
+pre {
+  margin: 2em 0;
+  padding: 24px;
+  border: 1px solid var(--color-light-chrome-medium);
+  background-color: var(--color-light-chrome-medium-low);
+}
+
+:globa(.light) pre {
+  border: 1px solid var(--color-light-chrome-medium);
+  background-color: var(--color-light-chrome-medium-low);
+}
+
+:global(.dark) pre {
+  border: 1px solid var(--color-dark-chrome-medium);
+  background-color: var(--color-dark-chrome-medium-low);
+}
+
+p {
+  max-width: 60em;
+  margin: 2em 0;
 }

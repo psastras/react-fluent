@@ -25,8 +25,20 @@
 .menuDrawerIconHidden:checked ~ .menu {
   transition: max-height 0.5s ease-in-out;
   height: auto;
+  margin-top: 12px;
+  border-top: 1px solid var(--color-light-base-low);
   border-bottom: 2px solid var(--color-light-base-high);
   max-height: 100vh;
+}
+
+.menuDrawerIconHidden.light:checked ~ .menu {
+  border-top: 1px solid var(--color-light-base-low);
+  border-bottom: 2px solid var(--color-light-base-high);
+}
+
+.menuDrawerIconHidden.dark:checked ~ .menu {
+  border-top: 1px solid var(--color-dark-base-low);
+  border-bottom: 2px solid var(--color-dark-base-high);
 }
 
 .menuDrawerIcon {
@@ -69,24 +81,26 @@
 }
 
 .menuItem.dark a {
-  color: white;
+  color: var(--color-dark-base-high);
+  background-color: var(--color-dark-chrome-medium-low);
 }
 
 .menuItem.light a {
-  color: black;
+  color: var(--color-light-base-high);
+  background-color: var(--color-light-chrome-medium-low);
 }
 
 .menuItem.light a:hover {
   text-decoration: underline;
-  background-color: var(--color-light-list-low);
+  background-color: var(--color-light-chrome-medium);
 }
 
 .menuItem.dark a:hover {
   text-decoration: underline;
-  background-color: var(--color-dark-list-low);
+  background-color: var(--color-dark-chrome-medium);
 }
 
-@media screen and (min-width: 641px) and (max-width: 1007px) {
+@media screen and (min-width: 641px) {
   .menu {
     position: relative;
     height: auto;
@@ -102,46 +116,32 @@
 
   .menuItem.light,
   .menuItem.dark {
-    background: unset;
+    background-color: inherit;
+  }
+
+  .menuItem.light a,
+  .menuItem.dark a {
+    background-color: inherit;
   }
 
   .menuItem.light a:hover,
   .menuItem.dark a:hover {
     text-decoration: underline;
-    background: unset;
+    background-color: inherit;
   }
 
   .menuDrawerIconHidden:checked ~ .menu {
-    border-bottom: none;
-  }
-}
-
-@media screen and (min-width: 1007px) {
-  .menu {
-    position: relative;
-    height: auto;
-    max-height: unset;
-    display: flex;
+    border-top: none;
     border-bottom: none;
   }
 
-  .menuDrawerIcon,
-  .menuDrawer {
-    display: none;
+  .menuDrawerIconHidden.light:checked ~ .menu {
+    border-top: none;
+    border-bottom: none;
   }
 
-  .menuItem.light,
-  .menuItem.dark {
-    background: unset;
-  }
-
-  .menuItem.light a:hover,
-  .menuItem.dark a:hover {
-    text-decoration: underline;
-    background: unset;
-  }
-
-  .menuDrawerIconHidden:checked ~ .menu {
+  .menuDrawerIconHidden.dark:checked ~ .menu {
+    border-top: none;
     border-bottom: none;
   }
 }

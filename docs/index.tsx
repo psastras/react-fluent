@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
+import { BrowserRouter } from "react-router-dom";
 import { Component } from "react";
 import "./index.css";
 
@@ -8,9 +9,11 @@ let App = require("./App").App;
 
 const render = (Component: React.ComponentClass) => {
   ReactDOM.render(
-    <AppContainer warnings={false}>
-      <Component />
-    </AppContainer>,
+    <BrowserRouter>
+      <AppContainer warnings={false}>
+        <Component />
+      </AppContainer>
+    </BrowserRouter>,
     document.getElementById("root")
   );
 };

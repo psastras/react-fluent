@@ -35,7 +35,10 @@ class FRNavigation extends React.Component<
         <input
           type="checkbox"
           id="drawer-toggle"
-          className={classnames(theme.menuDrawerIconHidden as string)}
+          className={classnames(
+            theme.menuDrawerIconHidden as string,
+            theme[this.context.stylus] as string
+          )}
         />
         <label
           htmlFor="drawer-toggle"

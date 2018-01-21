@@ -1,0 +1,16 @@
+.logo {
+  width: 32px;
+  height: 32px;
+  margin: auto 24px auto 0;
+  position: relative;
+}
+
+.logo > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 10%;
+  border: 1px solid var(--color-accent);
+}

@@ -8,7 +8,7 @@ import { Select } from "../Select/select";
 
 namespace FRSideNavigation {
   export interface OwnProps {
-    children?: JSX.Element[];
+    children?: JSX.Element | JSX.Element[];
     theme?: TReactCSSThemrTheme;
   }
 
@@ -34,9 +34,11 @@ class FRSideNavigation extends React.Component<
         )}
         {...other}
       >
-        <Select className={theme.menuCollapsed as string}>{children}</Select>
+        <div className={theme.menuCollapsed as string}>
+          <Select>{children}</Select>
+        </div>
         <ul className={theme.menu as string}>
-          {children.map((child, i) => {
+          {React.Children.map(children, (child, i) => {
             return (
               <li
                 key={i}

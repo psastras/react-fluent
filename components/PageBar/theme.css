@@ -6,8 +6,18 @@
 }
 
 .pageBarTitle {
-  @apply --subheader;
   flex: 1;
+  @apply --subheader;
+}
+
+.pageBarTitle.light a {
+  color: var(--color-light-base-high);
+  text-decoration: none;
+}
+
+.pageBarTitle.dark a {
+  color: var(--color-dark-base-high);
+  text-decoration: none;
 }
 
 @media screen and (min-width: 641px) and (max-width: 1007px) {
@@ -15,21 +25,11 @@
     flex-direction: row;
     justify-content: flex-start;
   }
-
-  .pageBarTitle {
-    @apply --subheader;
-    flex: 1;
-  }
 }
 
 @media screen and (min-width: 1007px) {
   .pageBar {
     flex-direction: row;
     justify-content: flex-start;
-  }
-
-  .pageBarTitle {
-    @apply --subheader;
-    flex: 1;
   }
 }

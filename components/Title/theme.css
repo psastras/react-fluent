@@ -34,11 +34,3 @@
   @apply --baseAlt;
   margin-bottom: 1em;
 }
-
-.light {
-  background: var(--color-light-list-accent-low);
-}
-
-.dark {
-  background: var(--color-dark-list-accent-low);
-}
