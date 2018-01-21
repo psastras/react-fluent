@@ -1,3 +1,6 @@
+.cache-loader
+records.json
+
 # Logs
 logs
 *.log

@@ -26,7 +26,9 @@ class Swatch extends React.Component<Swatch.Props, Swatch.State> {
 export class Colors extends React.Component<{}, {}> {
   render(): JSX.Element {
     return (
-      <>
+      <div>
+        <Title level="h1">Theme</Title>
+        <Title level="h2">Typography</Title>
         <Title level="h2">Color</Title>
 
         <Title level="h4">Light theme</Title>
@@ -64,7 +66,7 @@ export class Colors extends React.Component<{}, {}> {
           <Swatch color="color-dark-list-accent-medium" />
           <Swatch color="color-dark-list-accent-high" />
         </div>
-      </>
+      </div>
     );
   }
 }

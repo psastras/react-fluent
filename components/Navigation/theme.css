@@ -53,6 +53,10 @@
   text-decoration: none;
 }
 
+.menuItem a:hover {
+  text-decoration: underline;
+}
+
 .light {
   @apply --light;
 }

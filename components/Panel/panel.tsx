@@ -9,7 +9,7 @@ namespace FRPanel {
   export interface OwnProps {
     children?: React.ReactNode;
     theme?: TReactCSSThemrTheme;
-    stylus?: "light" | "dark";
+    stack?: boolean;
   }
 
   export type Props = OwnProps & React.HTMLAttributes<HTMLDivElement>;
@@ -21,25 +21,18 @@ class FRPanel extends React.Component<FRPanel.Props, FRPanel.State> {
     stylus: PropTypes.string
   };
   render(): JSX.Element {
-    const {
-      theme,
-      className,
-      children,
-      stylus = this.context.stylus,
-      ...other
-    } = this.props;
+    const { theme, className, stack = false, children, ...other } = this.props;
     return (
       <div
         className={classnames(
           theme.panel as string,
-          theme[stylus] as string,
+          stack && (theme.panelStack as string),
+          theme[this.context.stylus] as string,
           className
         )}
         {...other}
       >
-        {React.Children.map(children, child =>
-          React.cloneElement(child as any, { stylus })
-        )}
+        {children}
       </div>
     );
   }
