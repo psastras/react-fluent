@@ -1,0 +1,16 @@
+@import "../theme.css";
+
+.select {
+  font-family: var(--preferred-font);
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid black;
+  font-weight: var(--font-weight-semilight);
+  width: 100%;
+  padding: var(--unit) 0;
+}
+
+.select:focus {
+  outline: none;
+}

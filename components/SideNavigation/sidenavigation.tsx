@@ -4,6 +4,7 @@ import { SIDE_NAVIGATION } from "../indentifiers";
 import * as classnames from "classnames";
 import * as theme from "./theme.css";
 import * as PropTypes from "prop-types";
+import { Select } from "../Select/select";
 
 namespace FRSideNavigation {
   export interface OwnProps {
@@ -33,21 +34,7 @@ class FRSideNavigation extends React.Component<
         )}
         {...other}
       >
-        <select className={theme.menuCollapsed as string}>
-          {children.map((child, i) => {
-            return (
-              <option
-                key={i}
-                className={classnames(
-                  theme.menuItem as string,
-                  theme[this.context.stylus] as string
-                )}
-              >
-                {child}
-              </option>
-            );
-          })}
-        </select>
+        <Select className={theme.menuCollapsed as string}>{children}</Select>
         <ul className={theme.menu as string}>
           {children.map((child, i) => {
             return (

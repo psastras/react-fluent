@@ -2,11 +2,11 @@
 
 .pageBar {
   display: flex;
+  padding-bottom: 0;
 }
 
 .pageBarTitle {
   @apply --subheader;
-  margin-right: 24px;
   flex: 1;
 }
 
@@ -15,11 +15,21 @@
     flex-direction: row;
     justify-content: flex-start;
   }
+
+  .pageBarTitle {
+    @apply --subheader;
+    flex: 1;
+  }
 }
 
 @media screen and (min-width: 1007px) {
   .pageBar {
     flex-direction: row;
     justify-content: flex-start;
+  }
+
+  .pageBarTitle {
+    @apply --subheader;
+    flex: 1;
   }
 }

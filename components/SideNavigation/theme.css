@@ -1,7 +1,8 @@
 @import "../theme.css";
 
 .panel {
-  max-width: 0;
+  padding: 0;
+  /* max-width: 0; */
 }
 
 .menu {
