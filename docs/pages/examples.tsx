@@ -6,7 +6,13 @@ import { Link } from "react-router-dom";
 export class Examples extends React.Component<{}, {}> {
   render(): JSX.Element {
     return (
-      <Panel stack>
+      <Panel
+        pad={{
+          horizontal: "none",
+          vertical: "med"
+        }}
+        stack
+      >
         <main>
           <Title>Examples</Title>
           <p>Coming soon!</p>

@@ -7,7 +7,13 @@ import { Link } from "react-router-dom";
 export class Components extends React.Component<{}, {}> {
   render(): JSX.Element {
     return (
-      <Panel stack>
+      <Panel
+        pad={{
+          horizontal: "none",
+          vertical: "med"
+        }}
+        stack
+      >
         <SideNavigation>
           <Link to="/">Button</Link>
           <Link to="/">Select</Link>

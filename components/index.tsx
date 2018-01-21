@@ -2,6 +2,7 @@ import * as React from "react";
 import * as PropTypes from "prop-types";
 import * as color from "color";
 import * as theme from "./theme.css";
+import { computeStylus } from "../helpers/color";
 
 export namespace RFThemeProvider {
   export interface Props {
@@ -14,6 +15,7 @@ export namespace RFThemeProvider {
 
   export interface Context {
     stylus: "light" | "dark";
+    accent: string;
   }
 }
 
@@ -22,21 +24,20 @@ export class RFThemeProvider extends React.Component<
   RFThemeProvider.State
 > {
   static childContextTypes = {
+    accent: PropTypes.string,
     stylus: PropTypes.string
   };
 
   getChildContext(): RFThemeProvider.Context {
     const { accent = undefined } = this.props;
     if (accent) {
-      const accentColor = color(accent);
-      const isDark =
-        5 * accentColor.green() + 2 * accentColor.red() + accentColor.blue() <=
-        8 * 128;
       return {
-        stylus: this.props.stylus || (isDark ? "light" : "dark")
+        accent,
+        stylus: this.props.stylus || computeStylus(accent)
       };
     }
     return {
+      accent: "#0078d7",
       stylus: this.props.stylus || "light"
     };
   }
@@ -72,10 +73,6 @@ export class RFThemeProvider extends React.Component<
   }
 
   render(): JSX.Element {
-    return (
-      <div className={theme[this.props.stylus || "light"] as string}>
-        {this.props.children}
-      </div>
-    );
+    return <>{this.props.children}</>;
   }
 }

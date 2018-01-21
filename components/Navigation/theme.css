@@ -12,6 +12,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  z-index: 100;
   overflow: hidden;
   border-bottom: none;
 }
@@ -25,19 +26,17 @@
 .menuDrawerIconHidden:checked ~ .menu {
   transition: max-height 0.5s ease-in-out;
   height: auto;
-  margin-top: 12px;
-  border-top: 1px solid var(--color-light-base-low);
-  border-bottom: 2px solid var(--color-light-base-high);
+  padding-top: 6px;
   max-height: 100vh;
 }
 
 .menuDrawerIconHidden.light:checked ~ .menu {
-  border-top: 1px solid var(--color-light-base-low);
+  /* border-top: 1px solid var(--color-light-base-low); */
   border-bottom: 2px solid var(--color-light-base-high);
 }
 
 .menuDrawerIconHidden.dark:checked ~ .menu {
-  border-top: 1px solid var(--color-dark-base-low);
+  /* border-top: 1px solid var(--color-dark-base-low); */
   border-bottom: 2px solid var(--color-dark-base-high);
 }
 

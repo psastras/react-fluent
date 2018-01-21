@@ -40,6 +40,7 @@ class FRTitle extends React.Component<FRTitle.Props, FRTitle.State> {
           <h1
             className={classnames(
               type ? (theme[modifiedType] as string) : (theme.header as string),
+              theme[this.context.stylus] as string,
               className
             )}
           >
@@ -53,6 +54,7 @@ class FRTitle extends React.Component<FRTitle.Props, FRTitle.State> {
               type
                 ? (theme[modifiedType] as string)
                 : (theme.subheader as string),
+              theme[this.context.stylus] as string,
               className
             )}
           >
@@ -64,6 +66,7 @@ class FRTitle extends React.Component<FRTitle.Props, FRTitle.State> {
           <h3
             className={classnames(
               type ? (theme[modifiedType] as string) : (theme.title as string),
+              theme[this.context.stylus] as string,
               className
             )}
           >
@@ -92,6 +95,7 @@ class FRTitle extends React.Component<FRTitle.Props, FRTitle.State> {
               type
                 ? (theme[modifiedType] as string)
                 : alt ? (theme.baseAlt as string) : (theme.base as string),
+              theme[this.context.stylus] as string,
               className
             )}
           >
@@ -103,6 +107,7 @@ class FRTitle extends React.Component<FRTitle.Props, FRTitle.State> {
           <h1
             className={classnames(
               type ? (theme[modifiedType] as string) : (theme.header as string),
+              theme[this.context.stylus] as string,
               className
             )}
           >

@@ -5,11 +5,15 @@ import * as classnames from "classnames";
 import * as theme from "./theme.css";
 import * as PropTypes from "prop-types";
 import { Panel } from "../Panel/panel";
+import { RFThemeProvider } from "../index";
+import { pageBar } from "./theme.css";
+import { computeStylus } from "../../helpers/color";
 
 namespace FRPageBar {
   export interface OwnProps {
     content?: JSX.Element[] | JSX.Element;
     children?: JSX.Element[] | JSX.Element;
+    accent?: boolean;
     theme?: TReactCSSThemrTheme;
   }
 
@@ -19,31 +23,51 @@ namespace FRPageBar {
 
 class FRPageBar extends React.Component<FRPageBar.Props, FRPageBar.State> {
   static contextTypes = {
+    accent: PropTypes.string,
     stylus: PropTypes.string
   };
 
   render(): JSX.Element {
-    const { theme, content, className, children, ...other } = this.props;
+    const {
+      content,
+      theme,
+      accent = false,
+      className,
+      children,
+      ...other
+    } = this.props;
+
+    const stylus = accent
+      ? computeStylus(this.context.accent) === "light" ? "dark" : "light"
+      : this.context.stylus;
 
     return (
-      <Panel
-        className={classnames(
-          theme.pageBar as string,
-          theme[this.context.stylus] as string
-        )}
-        {...other}
-      >
-        <span
+      <RFThemeProvider stylus={stylus}>
+        <Panel
+          pad={{
+            horizontal: "large",
+            vertical: "med"
+          }}
+          theme={theme}
           className={classnames(
-            theme.pageBarTitle as string,
-            theme[this.context.stylus] as string,
-            className
+            theme.pageBar as string,
+            theme[stylus] as string,
+            accent && (theme.pageBarAccent as string)
           )}
+          {...other}
         >
-          {content}
-        </span>
-        {children}
-      </Panel>
+          <span
+            className={classnames(
+              theme.pageBarTitle as string,
+              theme[stylus] as string,
+              className
+            )}
+          >
+            {content}
+          </span>
+          {children}
+        </Panel>
+      </RFThemeProvider>
     );
   }
 }

@@ -4,7 +4,6 @@ import { Button } from "../components/Button/button";
 import { PageBar } from "../components/PageBar/pagebar";
 import { RFThemeProvider } from "../components/index";
 import { Title } from "../components/Title/title";
-import { Layout } from "../components/Layout/layout";
 import { Panel } from "../components/Panel/panel";
 import { Navigation } from "../components/Navigation/navigation";
 import { SideNavigation } from "../components/SideNavigation/sidenavigation";
@@ -20,7 +19,12 @@ export class App extends React.Component<{}, {}> {
   render() {
     return (
       <RFThemeProvider>
-        <Layout>
+        <Panel
+          direction="vertical"
+          stretchY
+          pad={{ horizontal: "none", vertical: "none" }}
+          material="solid"
+        >
           <PageBar
             content={
               <Link style={{ display: "block" }} to="/">
@@ -36,13 +40,15 @@ export class App extends React.Component<{}, {}> {
               <Link to="/examples">Examples</Link>
             </Navigation>
           </PageBar>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/installation" component={Installation} />
-            <Route path="/components" component={Components} />
-            <Route path="/examples" component={Examples} />
-          </Switch>
-        </Layout>
+          <Panel pad={{ horizontal: "large", vertical: "none" }}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/installation" component={Installation} />
+              <Route path="/components" component={Components} />
+              <Route path="/examples" component={Examples} />
+            </Switch>
+          </Panel>
+        </Panel>
       </RFThemeProvider>
     );
   }

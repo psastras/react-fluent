@@ -5,6 +5,7 @@ import * as classnames from "classnames";
 import * as theme from "./theme.css";
 import * as PropTypes from "prop-types";
 import { Select } from "../Select/select";
+import { Panel } from "../Panel/panel";
 
 namespace FRSideNavigation {
   export interface OwnProps {
@@ -26,7 +27,11 @@ class FRSideNavigation extends React.Component<
   render(): JSX.Element {
     const { theme, className, children, ...other } = this.props;
     return (
-      <div
+      <Panel
+        pad={{
+          horizontal: "none",
+          vertical: "none"
+        }}
         className={classnames(
           theme.panel as string,
           theme[this.context.stylus] as string,
@@ -52,7 +57,7 @@ class FRSideNavigation extends React.Component<
             );
           })}
         </ul>
-      </div>
+      </Panel>
     );
   }
 }

@@ -2,7 +2,10 @@
 
 .pageBar {
   display: flex;
-  padding-bottom: 0;
+}
+
+.pageBarAccent {
+  background-color: var(--color-accent);
 }
 
 .pageBarTitle {

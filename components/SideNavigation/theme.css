@@ -14,7 +14,8 @@
 
 .menuCollapsed {
   display: block;
-  padding: 0px 0 24px 0;
+  width: 100%;
+  padding: 12px 0;
 }
 
 .menuItem a {

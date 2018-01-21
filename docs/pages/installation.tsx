@@ -13,7 +13,13 @@ export class Installation extends React.Component<{}, {}> {
   };
   render(): JSX.Element {
     return (
-      <Panel stack>
+      <Panel
+        pad={{
+          horizontal: "none",
+          vertical: "med"
+        }}
+        stack
+      >
         <main>
           <ReactMarkdown source={install} className={this.context.stylus} />
         </main>
