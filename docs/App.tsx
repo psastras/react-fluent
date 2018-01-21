@@ -10,7 +10,7 @@ import { Panel } from "../components/Panel/panel";
 import { Navigation } from "../components/Navigation/navigation";
 import { SideNavigation } from "../components/SideNavigation/sidenavigation";
 
-export class App extends React.Component {
+export class App extends React.Component<{}, {}> {
   render() {
     return (
       <RFThemeProvider>

@@ -1,3 +1,5 @@
+export const light: string;
+export const dark: string;
 export const header: string;
 export const subheader: string;
 export const title: string;
@@ -5,5 +7,3 @@ export const subtitle: string;
 export const subtitleAlt: string;
 export const base: string;
 export const baseAlt: string;
-export const light: string;
-export const dark: string;

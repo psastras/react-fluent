@@ -33,6 +33,21 @@ class FRSideNavigation extends React.Component<
         )}
         {...other}
       >
+        <select className={theme.menuCollapsed as string}>
+          {children.map((child, i) => {
+            return (
+              <option
+                key={i}
+                className={classnames(
+                  theme.menuItem as string,
+                  theme[this.context.stylus] as string
+                )}
+              >
+                {child}
+              </option>
+            );
+          })}
+        </select>
         <ul className={theme.menu as string}>
           {children.map((child, i) => {
             return (

@@ -1,3 +1,21 @@
+.light {
+  color: black;
+  background-color: white;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.light a {
+  color: var(--color-accent);
+}
+
+.dark a {
+  color: var(--color-accent);
+}
+
 :root {
   --unit: 4px;
   --preferred-font: "Segoe UI", "Calibri", "Roboto", "Helvetica", "Arial",
@@ -33,16 +51,6 @@
   --color-dark-list-accent-low: color(#0078d7 shade(40%));
   --color-dark-list-accent-medium: color(#0078d7 shade(20%));
   --color-dark-list-accent-high: color(#0078d7 shade(10%));
-
-  --dark: {
-    background-color: var(--color-dark-list-low);
-    color: white;
-  }
-
-  --light: {
-    background-color: white;
-    color: black;
-  }
 
   --header: {
     font-size: 46px;

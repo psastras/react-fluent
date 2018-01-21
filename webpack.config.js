@@ -4,10 +4,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const AutoDllPlugin = require("autodll-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const threadLoader = require("thread-loader");
 
 threadLoader.warmup({}, [
   "cache-loader",
+  "css-hot-loader",
+  "react-hot-loader/webpack",
   "typings-for-css-modules-loader",
   "style-loader",
   "postcss-loader"
@@ -18,6 +22,7 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     hot: true,
+    quiet: true,
     contentBase: "./dist"
   },
   module: {
@@ -29,19 +34,23 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          "thread-loader",
-          "cache-loader",
-          "style-loader",
-          {
-            loader: "typings-for-css-modules-loader",
-            options: {
-              modules: true,
-              namedExport: true
-            }
-          },
-          "postcss-loader"
-        ]
+        use: ["cache-loader", "css-hot-loader"].concat(
+          ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: [
+              "thread-loader",
+              {
+                loader: "typings-for-css-modules-loader",
+                options: {
+                  modules: true,
+                  namedExport: true,
+                  localIdentName: "[path][name]__[local]--[hash:base64:5]"
+                }
+              },
+              "postcss-loader"
+            ]
+          })
+        )
       }
     ]
   },
@@ -55,8 +64,10 @@ module.exports = {
     publicPath: "/"
   },
   plugins: [
+    new FriendlyErrorsWebpackPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin("styles.css"),
     new CleanWebpackPlugin(["dist"]),
     new HardSourceWebpackPlugin(),
     new HtmlWebpackPlugin({

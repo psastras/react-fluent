@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
 import * as color from "color";
+import * as theme from "./theme.css";
 
 export namespace RFThemeProvider {
   export interface Props {
@@ -71,6 +72,10 @@ export class RFThemeProvider extends React.Component<
   }
 
   render(): JSX.Element {
-    return <>{this.props.children}</>;
+    return (
+      <div className={theme[this.props.stylus || "light"] as string}>
+        {this.props.children}
+      </div>
+    );
   }
 }

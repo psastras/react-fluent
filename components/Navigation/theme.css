@@ -13,6 +13,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+  border-bottom: none;
 }
 
 .menuDrawerIconHidden {
@@ -22,8 +23,9 @@
 }
 
 .menuDrawerIconHidden:checked ~ .menu {
-  transition: max-height 1s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
   height: auto;
+  border-bottom: 2px solid var(--color-light-base-high);
   max-height: 100vh;
 }
 
@@ -34,7 +36,19 @@
   height: 32px;
   width: 32px;
   margin: 6px 12px 6px 0;
-  background: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.menuDrawerIcon:after {
+  content: "☰";
+  text-align: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 0;
+  left: 0.5em;
+  @apply --subtitle;
 }
 
 .menuDrawerIconHidden:checked {
@@ -46,31 +60,30 @@
 }
 
 .menuItem {
-  padding: 12px;
 }
 
 .menuItem a {
+  display: block;
+  padding: 16px 12px;
   text-decoration: none;
 }
 
-.menuItem a:hover {
+.menuItem.dark a {
+  color: white;
+}
+
+.menuItem.light a {
+  color: black;
+}
+
+.menuItem.light a:hover {
   text-decoration: underline;
+  background-color: var(--color-light-list-low);
 }
 
-.light {
-  @apply --light;
-}
-
-.dark {
-  @apply --dark;
-}
-
-.light a {
-  @apply --light;
-}
-
-.dark a {
-  @apply --dark;
+.menuItem.dark a:hover {
+  text-decoration: underline;
+  background-color: var(--color-dark-list-low);
 }
 
 @media screen and (min-width: 641px) and (max-width: 1007px) {
@@ -79,11 +92,27 @@
     height: auto;
     display: flex;
     max-height: unset;
+    border-bottom: none;
   }
 
   .menuDrawerIcon,
   .menuDrawer {
     display: none;
+  }
+
+  .menuItem.light,
+  .menuItem.dark {
+    background: unset;
+  }
+
+  .menuItem.light a:hover,
+  .menuItem.dark a:hover {
+    text-decoration: underline;
+    background: unset;
+  }
+
+  .menuDrawerIconHidden:checked ~ .menu {
+    border-bottom: none;
   }
 }
 
@@ -93,10 +122,26 @@
     height: auto;
     max-height: unset;
     display: flex;
+    border-bottom: none;
   }
 
   .menuDrawerIcon,
   .menuDrawer {
     display: none;
+  }
+
+  .menuItem.light,
+  .menuItem.dark {
+    background: unset;
+  }
+
+  .menuItem.light a:hover,
+  .menuItem.dark a:hover {
+    text-decoration: underline;
+    background: unset;
+  }
+
+  .menuDrawerIconHidden:checked ~ .menu {
+    border-bottom: none;
   }
 }
