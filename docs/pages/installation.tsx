@@ -18,6 +18,7 @@ export class Installation extends React.Component<{}, {}> {
           horizontal: "none",
           vertical: "med"
         }}
+        stretchX
         stack
       >
         <main>

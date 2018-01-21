@@ -5,6 +5,7 @@ import { SideNavigation } from "../../components/SideNavigation/sidenavigation";
 import { Hero } from "../../components/Hero/hero";
 import { Button } from "../../components/Button/button";
 import { RFThemeProvider } from "../../components/index";
+import { Link } from "react-router-dom";
 
 export class Home extends React.Component<{}, {}> {
   render(): JSX.Element {
@@ -18,14 +19,11 @@ export class Home extends React.Component<{}, {}> {
         direction="vertical"
       >
         <RFThemeProvider stylus="dark">
-          <Hero size="large">
+          <Hero size="large" imageUrl="/assets/images/hero1.jpg" shadow>
             <Title>React Fluent</Title>
-            <Title level="h2">
-              A set of React components implementing Fluent Design
+            <Title level="h3">
+              A set of React components implementing Fluent Design.
             </Title>
-            <div>
-              <Button>Start here</Button>
-            </div>
           </Hero>
         </RFThemeProvider>
         <Panel
@@ -36,7 +34,26 @@ export class Home extends React.Component<{}, {}> {
           stretchX
           direction="vertical"
         >
-          <Title level="h2">Features</Title>
+          <div>
+            <Title level="h2">Features</Title>
+            <p>
+              Customizable light and dark themes - switch themes on the fly or
+              on a per component basis. React Fluent uses CSS modules with
+              react-css-themr to provide customizability for each component.
+            </p>
+            <p>
+              Mobile first components resize and are optimized for multiple
+              viewport sizes.
+            </p>
+            <p>
+              Minimal dependencies and modular components keep bundle sizes in
+              check.
+            </p>
+            <p>
+              See the <Link to="/installation">Installation Guide</Link> to get
+              started.
+            </p>
+          </div>
         </Panel>
       </Panel>
     );

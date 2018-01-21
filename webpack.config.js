@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HardSourceWebpackPlugin = require("hard-source-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const threadLoader = require("thread-loader");
 
 threadLoader.warmup({}, [
@@ -71,6 +72,7 @@ module.exports = {
   plugins: [
     new FriendlyErrorsWebpackPlugin(),
     new webpack.NamedModulesPlugin(),
+    new CopyWebpackPlugin([{ from: "./docs/assets", to: "./assets" }]),
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin("styles.css"),
     new CleanWebpackPlugin(["dist"]),

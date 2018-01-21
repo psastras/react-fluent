@@ -10,6 +10,8 @@ namespace FRHero {
   export interface OwnProps {
     children?: React.ReactNode;
     theme?: TReactCSSThemrTheme;
+    shadow?: boolean;
+    imageUrl?: string;
     size?: "small" | "med" | "large";
   }
 
@@ -22,16 +24,25 @@ class FRHero extends React.Component<FRHero.Props, FRHero.State> {
     stylus: PropTypes.string
   };
   render(): JSX.Element {
-    const { theme, children, size, ...other } = this.props;
+    const {
+      theme,
+      children,
+      imageUrl,
+      shadow = false,
+      size,
+      ...other
+    } = this.props;
     return (
       <div>
         <Panel
+          style={{ backgroundImage: `url(${imageUrl})` }}
           pad={{
             horizontal: "large",
-            vertical: "large"
+            vertical: "none"
           }}
           className={classnames(
             theme.hero as string,
+            shadow && (theme.shadow as string),
             theme[size] as string,
             theme[this.context.stylus] as string
           )}
@@ -40,7 +51,7 @@ class FRHero extends React.Component<FRHero.Props, FRHero.State> {
           stretchX
           {...other}
         >
-          {children}
+          <div>{children}</div>
         </Panel>
         <div className={theme.heroSpacer as string} />
       </div>

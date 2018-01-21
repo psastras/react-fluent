@@ -44,6 +44,7 @@ export class App extends React.Component<{}, {}> {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/installation" component={Installation} />
+              <Route path="/components/:component" component={Components} />
               <Route path="/components" component={Components} />
               <Route path="/examples" component={Examples} />
             </Switch>

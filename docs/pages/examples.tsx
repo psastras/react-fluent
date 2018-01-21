@@ -11,11 +11,14 @@ export class Examples extends React.Component<{}, {}> {
           horizontal: "none",
           vertical: "med"
         }}
+        stretchX
         stack
       >
         <main>
           <Title>Examples</Title>
-          <p>Coming soon!</p>
+          <p>
+            This site is written using React Fluent. More examples coming soon!
+          </p>
         </main>
       </Panel>
     );

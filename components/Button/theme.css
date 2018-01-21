@@ -2,28 +2,14 @@
 
 .button {
   font-family: var(--preferred-font);
-
   padding: calc(2 * var(--unit)) calc(3 * var(--unit));
   min-width: calc(30 * var(--unit));
-  line-height: 1;
   border: 1px solid transparent;
   vertical-align: bottom;
   transition: scale 0.2s ease-in-out;
 }
 
-.primary {
-  color: #ffffff;
-  background-color: #0067b8;
-}
-
-.secondary {
-  color: #000000;
-  background-color: var(--color-light-base-low);
-}
-
-.light {
-  color: #0067b8;
-  background: none;
+button.light {
 }
 
 button:active {

@@ -3,6 +3,7 @@ import { themr, TReactCSSThemrTheme } from "react-css-themr";
 import { BUTTON } from "../indentifiers";
 import * as classnames from "classnames";
 import * as theme from "./theme.css";
+import * as PropTypes from "prop-types";
 
 namespace FRButton {
   export interface OwnProps {
@@ -20,16 +21,17 @@ namespace FRButton {
 }
 
 class FRButton extends React.Component<FRButton.Props, FRButton.State> {
+  static contextTypes = {
+    stylus: PropTypes.string
+  };
   render(): JSX.Element {
-    const {
-      theme,
-      stylus = this.props.type === "submit" ? "primary" : "secondary",
-      children,
-      ...other
-    } = this.props;
+    const { theme, children, ...other } = this.props;
     return (
       <button
-        className={classnames(theme.button as string, theme[stylus] as string)}
+        className={classnames(
+          theme.button as string,
+          theme[this.context.stylus] as string
+        )}
         {...other}
       >
         {children}

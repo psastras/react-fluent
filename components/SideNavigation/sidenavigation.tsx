@@ -32,6 +32,7 @@ class FRSideNavigation extends React.Component<
           horizontal: "none",
           vertical: "none"
         }}
+        stretchX
         className={classnames(
           theme.panel as string,
           theme[this.context.stylus] as string,

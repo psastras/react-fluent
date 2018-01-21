@@ -2,8 +2,15 @@
 
 .hero {
   display: flex;
-  align-items: center;
-  box-shadow: 0px 0px 12px black;
+  align-items: flex-start;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.shadow {
+  box-shadow: 0px 0px calc(var(--unit) * 3) black;
 }
 
 .hero.small {
