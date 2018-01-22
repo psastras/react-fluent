@@ -4,8 +4,10 @@ import * as ReactDOM from "react-dom";
 import { Title } from "../../components/Title/title";
 import { Hero } from "../../components/Hero/hero";
 import * as styles from "./codeblock.css";
+import { Panel } from "../../components/Panel/panel";
 const JsxParser = require("react-jsx-parser").default;
 const Prism = require("prismjs");
+import "prismjs/components/prism-jsx.min";
 
 namespace CodeBlock {
   export interface Props {
@@ -20,37 +22,30 @@ export class CodeBlock extends React.Component<
   CodeBlock.Props,
   CodeBlock.State
 > {
-  codeEl: HTMLElement;
-  constructor(props: CodeBlock.Props) {
-    super(props);
-    this.setRef = this.setRef.bind(this);
+  render(): JSX.Element {
+    return (
+      <pre>
+        <code
+          dangerouslySetInnerHTML={{
+            __html: Prism.highlight(this.props.value, Prism.languages.jsx)
+          }}
+        />
+      </pre>
+    );
   }
+}
 
-  setRef(el: HTMLElement) {
-    this.codeEl = el;
-  }
-
-  render() {
-    const { ...bindings } = this.props;
+export class CodeBlockPreview extends React.Component<
+  CodeBlock.Props,
+  CodeBlock.State
+> {
+  render(): JSX.Element {
     return (
       <div className={styles.codeblock}>
         <Title level="h5">Code</Title>
-        <pre>
-          <code
-            dangerouslySetInnerHTML={{
-              __html: Prism.highlight(
-                this.props.value,
-                Prism.languages.javascript
-              )
-            }}
-          />
-        </pre>
+        <CodeBlock value={this.props.value} />
         <Title level="h5">Result</Title>
-        <JsxParser
-          bindings={bindings}
-          components={{ Title, Hero }}
-          jsx={this.props.value}
-        />
+        <JsxParser components={{ Title, Hero, Panel }} jsx={this.props.value} />
       </div>
     );
   }

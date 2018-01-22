@@ -2,7 +2,6 @@
 
 .panel {
   padding: 0;
-  /* max-width: 0; */
 }
 
 .menu {
@@ -47,7 +46,7 @@
   .panel {
     margin: 0;
     min-width: calc(var(--unit) * 50);
-    max-width: 1000vw;
+    max-width: 256px;
     width: 16.6666%;
   }
 

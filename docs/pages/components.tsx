@@ -5,7 +5,7 @@ import { SideNavigation } from "../../components/SideNavigation/sidenavigation";
 import { Link } from "react-router-dom";
 import { RouteComponentProps } from "react-router";
 import { ucFirst } from "../../helpers/string";
-import { CodeBlock } from "../components/codeblock";
+import { CodeBlockPreview } from "../components/codeblock";
 const ReactMarkdown = require("react-markdown");
 
 namespace Components {
@@ -63,7 +63,7 @@ export class Components extends React.Component<
                 source={require("../../components/" +
                   ucFirst(component.toLowerCase()) +
                   "/README.md")}
-                renderers={{ code: CodeBlock }}
+                renderers={{ code: CodeBlockPreview }}
                 className={this.context.stylus}
               />
             </>

@@ -48,7 +48,6 @@ class FRPanel extends React.Component<FRPanel.Props, FRPanel.State> {
     return (
       <div
         className={classnames(
-          // this.context.stylus || "light",
           theme[material] as string,
           theme.panel as string,
           theme[`panel${ucFirst(direction)}`] as string,
