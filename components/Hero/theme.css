@@ -33,7 +33,12 @@
   left: 0;
 }
 
+.heroSpacer {
+  display: none;
+}
+
 .hero.large ~ .heroSpacer {
+  display: block;
   width: 100%;
   height: calc(0.3 * 100vw);
   visibility: hidden;

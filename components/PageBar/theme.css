@@ -2,6 +2,7 @@
 
 .pageBar {
   display: flex;
+  min-height: 72px;
 }
 
 .pageBarAccent {
@@ -23,15 +24,9 @@
   text-decoration: none;
 }
 
-@media screen and (min-width: 641px) and (max-width: 1007px) {
+@media screen and (min-width: 641px) {
   .pageBar {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-}
-
-@media screen and (min-width: 1007px) {
-  .pageBar {
+    min-height: 92px;
     flex-direction: row;
     justify-content: flex-start;
   }

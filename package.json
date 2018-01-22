@@ -58,6 +58,7 @@
     "postcss-apply": "^0.8.0",
     "postcss-modules": "^1.1.0",
     "prettier": "^1.10.2",
+    "prismjs": "^1.10.0",
     "prop-types": "^15.6.0",
     "raw-loader": "^0.5.1",
     "react": "^16.2.0",
