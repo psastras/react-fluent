@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Title } from "../../components/Title/title";
-import { Panel } from "../../components/Panel/panel";
-import { SideNavigation } from "../../components/SideNavigation/sidenavigation";
-import { Hero } from "../../components/Hero/hero";
-import { Button } from "../../components/Button/button";
+import { Title } from "../../components/title/title";
+import { Panel } from "../../components/panel/panel";
+import { SideNavigation } from "../../components/sidenavigation/sidenavigation";
+import { Hero } from "../../components/hero/hero";
+import { Button } from "../../components/button/button";
 import { RFThemeProvider } from "../../components/index";
 import { Link } from "react-router-dom";
 

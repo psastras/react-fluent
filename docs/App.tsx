@@ -1,12 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Button } from "../components/Button/button";
-import { PageBar } from "../components/PageBar/pagebar";
+import { Button } from "../components/button/button";
+import { PageBar } from "../components/pagebar/pagebar";
 import { RFThemeProvider } from "../components/index";
-import { Title } from "../components/Title/title";
-import { Panel } from "../components/Panel/panel";
-import { Navigation } from "../components/Navigation/navigation";
-import { SideNavigation } from "../components/SideNavigation/sidenavigation";
+import { Title } from "../components/title/title";
+import { Panel } from "../components/panel/panel";
+import { Navigation } from "../components/navigation/navigation";
+import { SideNavigation } from "../components/sidenavigation/sidenavigation";
 import { Switch, Route } from "react-router";
 import { Home } from "./pages/home";
 import { Link } from "react-router-dom";

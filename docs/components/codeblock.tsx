@@ -1,17 +1,17 @@
 import * as React from "react";
 import "!style-loader!css-loader!prismjs/themes/prism.css";
 import * as ReactDOM from "react-dom";
-import { Title } from "../../components/Title/title";
-import { Hero } from "../../components/Hero/hero";
+import { Title } from "../../components/title/title";
+import { Hero } from "../../components/hero/hero";
 import * as styles from "./codeblock.css";
-import { Panel } from "../../components/Panel/panel";
+import { Panel } from "../../components/panel/panel";
 const JsxParser = require("react-jsx-parser").default;
 const Prism = require("prismjs");
 import "prismjs/components/prism-jsx.min";
-import { Select } from "../../components/Select/select";
-import { Navigation } from "../../components/Navigation/navigation";
-import { PageBar } from "../../components/PageBar/pagebar";
-import { SideNavigation } from "../../components/SideNavigation/sidenavigation";
+import { Select } from "../../components/select/select";
+import { Navigation } from "../../components/navigation/navigation";
+import { PageBar } from "../../components/pagebar/pagebar";
+import { SideNavigation } from "../../components/sidenavigation/sidenavigation";
 
 namespace CodeBlock {
   export interface Props {

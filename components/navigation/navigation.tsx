@@ -1,50 +1,54 @@
 import * as React from "react";
 import { themr, TReactCSSThemrTheme } from "react-css-themr";
-import { SIDE_NAVIGATION } from "../indentifiers";
+import { NAVIGATION } from "../indentifiers";
 import * as classnames from "classnames";
 import * as theme from "./theme.css";
 import * as PropTypes from "prop-types";
-import { Select } from "../select/select";
-import { Panel } from "../panel/panel";
 
-namespace FRSideNavigation {
+namespace FRNavigation {
   export interface OwnProps {
-    children?: JSX.Element | JSX.Element[];
+    children?: JSX.Element[];
     theme?: TReactCSSThemrTheme;
+    stylus?: "light" | "dark";
   }
 
   export type Props = OwnProps & React.HTMLAttributes<HTMLDivElement>;
   export type State = {};
 }
 
-class FRSideNavigation extends React.Component<
-  FRSideNavigation.Props,
-  FRSideNavigation.State
+class FRNavigation extends React.Component<
+  FRNavigation.Props,
+  FRNavigation.State
 > {
   static contextTypes = {
     stylus: PropTypes.string
   };
   render(): JSX.Element {
-    const { theme, className, children, ...other } = this.props;
+    const { theme, children, ...other } = this.props;
     return (
-      <Panel
-        pad={{
-          horizontal: "none",
-          vertical: "none"
-        }}
-        stretchX
+      <div
         className={classnames(
-          theme.panel as string,
-          theme[this.context.stylus] as string,
-          className
+          theme.navigation as string,
+          theme[this.context.stylus] as string
         )}
-        {...other}
       >
-        <div className={theme.menuCollapsed as string}>
-          <Select>{children}</Select>
-        </div>
+        <input
+          type="checkbox"
+          id="drawer-toggle"
+          className={classnames(
+            theme.menuDrawerIconHidden as string,
+            theme[this.context.stylus] as string
+          )}
+        />
+        <label
+          htmlFor="drawer-toggle"
+          className={classnames(
+            theme.menuDrawerIcon as string,
+            theme[this.context.stylus] as string
+          )}
+        />
         <ul className={theme.menu as string}>
-          {React.Children.map(children, (child, i) => {
+          {children.map((child, i) => {
             return (
               <li
                 key={i}
@@ -58,9 +62,9 @@ class FRSideNavigation extends React.Component<
             );
           })}
         </ul>
-      </Panel>
+      </div>
     );
   }
 }
 
-export const SideNavigation = themr(SIDE_NAVIGATION, theme)(FRSideNavigation);
+export const Navigation = themr(NAVIGATION, theme)(FRNavigation);

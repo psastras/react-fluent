@@ -1,0 +1,37 @@
+@import "../theme.css";
+
+.button {
+  font-family: var(--preferred-font);
+  padding: calc(2 * var(--unit)) calc(3 * var(--unit));
+  min-width: calc(30 * var(--unit));
+  border: 1px solid transparent;
+  vertical-align: bottom;
+  transition: scale 0.2s ease-in-out;
+}
+
+button.light {
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.primary:hover {
+  background-color: #005da6;
+}
+
+.primary:active {
+  background-color: #005293;
+}
+
+.secondary:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.secondary:active {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.light:hover {
+  text-decoration: underline;
+}

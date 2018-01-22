@@ -1,10 +1,9 @@
 import * as React from "react";
-import { Title } from "../../components/Title/title";
-import { Panel } from "../../components/Panel/panel";
-import { SideNavigation } from "../../components/SideNavigation/sidenavigation";
+import { Title } from "../../components/title/title";
+import { Panel } from "../../components/panel/panel";
+import { SideNavigation } from "../../components/sidenavigation/sidenavigation";
 import { Link } from "react-router-dom";
 import { RouteComponentProps } from "react-router";
-import { ucFirst } from "../../helpers/string";
 import { CodeBlockPreview } from "../components/codeblock";
 const ReactMarkdown = require("react-markdown");
 
@@ -64,7 +63,7 @@ export class Components extends React.Component<
             <>
               <ReactMarkdown
                 source={require("../../components/" +
-                  ucFirst(component.toLowerCase()) +
+                  component.toLowerCase() +
                   "/README.md")}
                 renderers={{ code: CodeBlockPreview }}
                 className={this.context.stylus}

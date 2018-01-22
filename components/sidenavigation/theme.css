@@ -1,0 +1,60 @@
+@import "../theme.css";
+
+.panel {
+  padding: 0;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 12px 0 24px 0;
+  padding: 0;
+  display: none;
+}
+
+.menuCollapsed {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.menuItem a {
+  text-decoration: none;
+  line-height: 2.25em;
+}
+
+.menuItem a:hover {
+  text-decoration: underline;
+}
+
+.menuItem.light a {
+  color: var(--color-light-base-medium);
+}
+
+.menuItem.light a:hover {
+  color: var(--color-light-base-high);
+}
+
+.menuItem.dark a {
+  color: var(--color-dark-base-medium);
+}
+
+.menuItem.dark a:hover {
+  color: var(--color-dark-base-high);
+}
+
+@media screen and (min-width: 641px) {
+  .panel {
+    margin: 0;
+    min-width: calc(var(--unit) * 50);
+    max-width: 256px;
+    width: 16.6666%;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .menuCollapsed {
+    display: none;
+  }
+}

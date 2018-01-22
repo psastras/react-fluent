@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Title } from "../../components/Title/title";
-import { Panel } from "../../components/Panel/panel";
-import { SideNavigation } from "../../components/SideNavigation/sidenavigation";
+import { Title } from "../../components/title/title";
+import { Panel } from "../../components/panel/panel";
+import { SideNavigation } from "../../components/sidenavigation/sidenavigation";
 import { Link } from "react-router-dom";
 import * as PropTypes from "prop-types";
 import { CodeBlock } from "../components/codeblock";
