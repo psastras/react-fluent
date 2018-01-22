@@ -1,0 +1,8 @@
+.codeblock {
+  margin: 32px 0;
+}
+
+.codeblock:not(:last-of-type) {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 48px;
+}
