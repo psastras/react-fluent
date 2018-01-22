@@ -4,17 +4,17 @@ A hero highlights important content as well as the primary action on a page. Usu
 
 ## Examples
 
-```javascipt
+```javascript
 <Hero size="small" shadow>
-    <Title>Product Feature</Title>
-    <Title level="h2">Feature subtitle</Title>
+  <Title>Product Feature</Title>
+  <Title level="h2">Feature subtitle</Title>
 </Hero>
 ```
 
-```javascipt
+```javascript
 <Hero size="med" imageUrl="/assets/images/hero2.jpg">
-    <Title>Product Feature</Title>
-    <Title level="h2">Feature subtitle</Title>
+  <Title>Product Feature</Title>
+  <Title level="h2">Feature subtitle</Title>
 </Hero>
 ```
 

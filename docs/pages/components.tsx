@@ -34,8 +34,11 @@ export class Components extends React.Component<
         <SideNavigation>
           <Link to="/components/button">Button</Link>
           <Link to="/components/hero">Hero</Link>
+          <Link to="/components/navigation">Navigation</Link>
+          <Link to="/components/pagebar">Page Bar</Link>
           <Link to="/components/panel">Panel</Link>
           <Link to="/components/select">Select</Link>
+          <Link to="/components/sidenavigation">Side Navigation</Link>
           <Link to="/components/title">Title</Link>
         </SideNavigation>
         <main style={{ width: "100%" }}>

@@ -13,7 +13,10 @@ The panel is used as the main layout component and allows flowing content in dif
 
 ```javascript
 <Panel style={{ border: "1px solid #ccc" }} direction="horizontal" stack>
-  <Panel style={{ border: "1px solid #ccc" }} direction="vertical">
+  <Panel
+    style={{ border: "1px solid #ccc", minWidth: "25%" }}
+    direction="vertical"
+  >
     <div>Content A</div>
   </Panel>
   <Panel style={{ border: "1px solid #ccc" }} direction="vertical" stretchX>

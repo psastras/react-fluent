@@ -8,6 +8,10 @@ import { Panel } from "../../components/Panel/panel";
 const JsxParser = require("react-jsx-parser").default;
 const Prism = require("prismjs");
 import "prismjs/components/prism-jsx.min";
+import { Select } from "../../components/Select/select";
+import { Navigation } from "../../components/Navigation/navigation";
+import { PageBar } from "../../components/PageBar/pagebar";
+import { SideNavigation } from "../../components/SideNavigation/sidenavigation";
 
 namespace CodeBlock {
   export interface Props {
@@ -45,7 +49,18 @@ export class CodeBlockPreview extends React.Component<
         <Title level="h5">Code</Title>
         <CodeBlock value={this.props.value} />
         <Title level="h5">Result</Title>
-        <JsxParser components={{ Title, Hero, Panel }} jsx={this.props.value} />
+        <JsxParser
+          components={{
+            Title,
+            Hero,
+            Panel,
+            Select,
+            Navigation,
+            PageBar,
+            SideNavigation
+          }}
+          jsx={this.props.value}
+        />
       </div>
     );
   }
