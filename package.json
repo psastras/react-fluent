@@ -25,7 +25,7 @@
   "homepage": "https://github.com/psastras/react-fluent#readme",
   "dependencies": {
     "@types/color": "^2.0.0",
-    "color": "^2.0.1"
+    "color": "^3.1.4"
   },
   "peerDependencies": {
     "react": "^16.2.0"
